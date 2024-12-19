@@ -1,0 +1,40 @@
+.service {
+  @include flexBox(column, flex-start, stretch);
+  gap: 16px;
+  padding-top: 74px;
+  &__item {
+    position: relative;
+    border-radius: 8px;
+    background-color: #f6f7fa;
+    padding: 24px;
+    padding-bottom: 18px;
+    min-height: 198px;
+    @include flexBox(column, space-between, stretch);
+
+    &--title {
+      @include typography(700, 24px, 32px);
+      margin-bottom: 16px;
+    }
+    &--description {
+      @include typography(400, 18px, 24px);
+      margin-bottom: 16px;
+      max-width: 230px;
+    }
+
+    &--icon {
+      position: absolute;
+      width: 115px;
+      height: 115px;
+      right: 0px;
+      bottom: 0px;
+    }
+  }
+}
+.blueBg {
+  background-color: $primary-blue;
+
+  h3,
+  p {
+    color: $light;
+  }
+}

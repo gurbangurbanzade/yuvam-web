@@ -1,0 +1,16 @@
+.chooseProtection {
+  padding: 64px 0px;
+  @include flexBox(column, space-between, flex-start);
+  gap: 20px;
+
+  &__header {
+    @include flexBox(column, flex-start, flex-start);
+    gap: 16px;
+    &__headText {
+      @include typography(700, 32px, 32px);
+    }
+    &__subText {
+      @include typography(400, 22px, 32px);
+    }
+  }
+}

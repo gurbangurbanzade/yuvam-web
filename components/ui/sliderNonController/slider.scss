@@ -1,0 +1,28 @@
+.homeSlider {
+  padding: 56px 0px !important;
+  @include lg_tablet {
+    padding: 32px 0px !important;
+  }
+  .swiper-pagination {
+    bottom: 100px !important;
+    @include lg_tablet {
+      bottom: 60px !important;
+    }
+    .swiper-pagination-bullet {
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 4px !important;
+      background-color: grey !important;
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      width: 24px !important;
+      height: 12px !important;
+      border-radius: 4px;
+      background-color: $light !important;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

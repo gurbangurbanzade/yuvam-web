@@ -1,0 +1,49 @@
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: green;
+    margin-bottom: 8px;
+  }
+  &__input {
+    position: relative !important;
+    width: 100%;
+    svg{
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+    }
+    &--item {
+      width: 100%;
+      border: 1px solid #d3dbdf;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding-left: 12px;
+      border-radius: 12px;
+      &::placeholder {
+        color: #5a686f;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &--itemWithIcon {
+      padding-left: 40px;
+    }
+    &--icon {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 20px;
+    }
+  }
+  .error {
+    color: red;
+  }
+}

@@ -1,0 +1,20 @@
+.btn {
+  padding: 0px 24px;
+  height: 54px;
+  border-radius: 8px;
+  @include flexBox(row, center, center);
+  gap: 8px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.primary {
+  background-color: $primary-blue;
+  @include typography(700, 18px, 20px, $light);
+}
+
+.primary-outline {
+  // background-color: $primary-blue;
+  border: 1px solid $primary-blue;
+  @include typography(700, 18px, 52px, $primary-blue);
+}

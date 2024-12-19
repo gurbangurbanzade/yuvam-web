@@ -1,0 +1,51 @@
+.swiper {
+  position: relative;
+}
+.navigationBtns {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flexBox();
+  gap: 24px;
+  z-index: 2;
+}
+
+.my-next {
+  width: 48px;
+  height: 48px;
+  @include flexBox();
+  border-radius: 50%;
+  background-color: $light;
+  border: 1px solid $brandGray-06;
+  z-index: 3;
+}
+
+.my-prev {
+  width: 48px;
+  height: 48px;
+  @include flexBox();
+  border-radius: 50%;
+  background-color: $light;
+  border: 1px solid $brandGray-06;
+  z-index: 3;
+}
+
+.swiper-pagination {
+  bottom: 0px !important;
+  .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 4px !important;
+    background-color: rgb(148, 148, 148) !important;
+    transition: all 0.3s ease-in-out;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 24px !important;
+    height: 12px !important;
+    border-radius: 4px;
+    background-color: $brandBlue-05 !important;
+    transition: all 0.3s ease-in-out;
+  }
+}

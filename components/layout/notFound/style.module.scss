@@ -1,0 +1,30 @@
+.notFound {
+  height: 100vh;
+  padding: 0px 16px;
+  @include flexBox(column, center, center);
+  background: url("./../../../public/images/images/notFoundBg.svg");
+  background-size: 100% auto;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  &__items {
+    width: 100%;
+    max-width: 480px;
+    @include flexBox(column, center, center);
+    &__img {
+      @include typography(500, 160px, 130px, #5b8cbb);
+      @include tablet {
+        font-size: 120px;
+      }
+    }
+    &__title {
+      @include typography(500, 24px, 32px, $brandGray-09);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    &__description {
+      text-align: center;
+      color: $brandGray-07;
+      margin-bottom: 24px;
+    }
+  }
+}

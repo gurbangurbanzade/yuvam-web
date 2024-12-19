@@ -1,0 +1,44 @@
+.slider {
+  .slider__slide {
+    position: relative;
+    .content {
+      @include lg_tablet {
+      }
+      &__imgBox {
+        position: relative;
+        height: 640px;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 32px;
+        @include lg_tablet {
+          height: 280px;
+          margin-bottom: 20px;
+        }
+        &--img {
+          object-fit: "cover";
+          object-position: "center";
+          border-radius: 16px;
+        }
+        &--title {
+          @include typography(400, 48px, 56px, $light);
+          position: absolute;
+          z-index: 1;
+          bottom: 60px;
+          left: 20px;
+          @include lg_tablet {
+            @include typography(400, 18px, 28px, $light);
+            bottom: 44px;
+          }
+        }
+      }
+      &--title {
+        @include typography(400, 24px, 32px, $brandBlue-07);
+        margin-bottom: 16px;
+      }
+      &--description {
+        color: $brandGray-06;
+        text-align: justify;
+      }
+    }
+  }
+}

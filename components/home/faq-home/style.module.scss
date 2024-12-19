@@ -1,0 +1,18 @@
+.faqHome {
+  padding-top: 112px;
+  @include flexBox(column, flex-start, stretch);
+  gap: 30px;
+  &__header {
+    @include flexBox(column, flex-start, stretch);
+    gap: 30px;
+    &__icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: auto;
+    }
+    &__headText {
+      @include typography(700, 24px, 32px);
+    }
+  }
+}

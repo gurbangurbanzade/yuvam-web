@@ -1,0 +1,58 @@
+.simpleSteps {
+  margin-top: 72px;
+  @include flexBox(column, flex-start, stretch);
+  gap: 55px;
+  &__header {
+    @include flexBox(row, flex-start, center);
+    gap: 14px;
+    &--leftSide {
+      @include typography(800, 88px, 132px);
+      letter-spacing: -0.949999988079071px;
+    }
+    &__rightSide {
+      &--headText {
+        @include typography(700, 32px, 32px);
+        letter-spacing: -0.949999988079071px;
+      }
+      &--subText {
+        @include typography(400, 24px, 32px);
+        letter-spacing: -0.949999988079071px;
+      }
+    }
+  }
+  &__main {
+    @include flexBox(row, flex-start, stretch);
+    gap: 24px;
+    &__leftSide {
+      @include flexBox(column, space-between, center);
+      gap: 4px;
+
+      &--icon {
+        width: 44px;
+        height: 44px;
+        @include flexBox();
+        border: 1px solid #d3d3d3;
+        border-radius: 8px;
+      }
+      &--line {
+        flex-grow: 1;
+        width: 1px;
+        background-color: #d3d3d3;
+      }
+    }
+
+    &__rightSide {
+      @include flexBox(column, flex-start, stretch);
+      gap: 30px;
+      &--item {
+        @include flexBox(column, flex-start, stretch);
+        &--title {
+          @include typography(700, 24px, 32px);
+        }
+        &--description {
+          @include typography(400, 18px, 24px);
+        }
+      }
+    }
+  }
+}

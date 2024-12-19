@@ -1,0 +1,13 @@
+@import "/styles/main.module.scss";
+.header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: $light;
+
+  @include mobile {
+  }
+}
+
+.scrolled {
+}

@@ -1,0 +1,103 @@
+@import "./variables.module.scss";
+$screen-xl-desktop: 1400px;
+$screen-xxl-desktop: 1360px;
+$screen-lg-desktop: 1220px;
+$screen-md-desktop: 1024px;
+$screen-desktop: 992px;
+$screen-lg-tablet: 900px;
+$screen-tablet: 768px;
+$screen-mobile_lg: 610px;
+$screen-mobile: 500px;
+
+// height
+$screen-lg-h: 990px;
+
+@mixin xl_desktop {
+  @media (max-width: #{$screen-xl-desktop}) {
+    @content;
+  }
+}
+
+@mixin xxl_desktop {
+  @media (max-width: #{$screen-xxl-desktop}) {
+    @content;
+  }
+}
+
+@mixin lg_desktop {
+  @media (max-width: #{$screen-lg-desktop}) {
+    @content;
+  }
+}
+
+@mixin md_desktop {
+  @media (max-width: #{$screen-md-desktop}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: #{$screen-desktop}) {
+    @content;
+  }
+}
+@mixin lg_tablet {
+  @media (max-width: #{$screen-lg-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$screen-tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile_lg {
+  @media (max-width: #{$screen-mobile_lg}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$screen-mobile}) {
+    @content;
+  }
+}
+
+// height
+@mixin lg_height {
+  @media (min-height: #{$screen-lg-h}) {
+    @content;
+  }
+}
+
+// flex box
+@mixin flexBox($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+//Typography
+@mixin typography(
+  $weight: 400,
+  $size: 16px,
+  $line: 24px,
+  $color: $primary-black
+) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+}
+
+// Visible line count
+@mixin lineCount($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}

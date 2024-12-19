@@ -1,0 +1,42 @@
+@import "/styles/main.module.scss";
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: green;
+    margin-bottom: 8px;
+  }
+  &__input {
+    position: relative !important;
+    width: 100%;
+    &--item {
+      width: 100%;
+      border: 1px solid #d3dbdf;
+      height: 96px;
+      padding: 12px;
+      border-radius: 12px;
+      &::placeholder {
+        color: #5a686f;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &--itemWithIcon {
+      padding-left: 36px;
+    }
+    &--icon {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 20px;
+    }
+  }
+  .error {
+    color: red;
+  }
+}

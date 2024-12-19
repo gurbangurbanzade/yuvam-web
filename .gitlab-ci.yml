@@ -1,0 +1,109 @@
+variables:
+  DOCKER_IMAGE_TAG: $CI_PROJECT_NAME:$CI_PIPELINE_IID
+  ROLLING_HISTORY: $CI_COMMIT_TITLE - $CI_JOB_URL
+  DEV_DOCKER_TAG: "total-dev-docker"
+  DEV_SHELL_TAG: "total-dev-shell"
+  PROD_SHELL_TAG: "kenwood-prod-shell"
+  DOCKER_NW: kenwood
+  SERVER_PORT: "3017"
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+stages:
+  - build
+  - sonarize
+  - dockerize
+  - deploy
+  - security_scan
+
+.deploy-script: &deploy_job
+  stage: deploy
+  services:
+    - docker:27.0.3-dind-alpine3.20
+  script:
+    - docker info
+    - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+    - docker stop ${CI_PROJECT_NAME} || true
+    - docker rm ${CI_PROJECT_NAME} || true
+    - docker rmi $(docker images --format '{{.Repository}}:{{.Tag}}' | awk '/'$CI_PROJECT_NAME'/ && !/'$CI_PIPELINE_ID'/ { print }') || true
+    - docker run -itd -p 127.0.0.1:$SERVER_PORT:3000   --network=$DOCKER_NW --name ${CI_PROJECT_NAME} --restart unless-stopped $CI_REGISTRY/$CI_PROJECT_NAMESPACE/$DOCKER_IMAGE_TAG
+
+.build-script: &build_job
+  stage: dockerize
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - echo "Debugging environment"
+    - which sh
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_JOB_TOKEN}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --cache=true
+      --build-arg CI_PROJECT_NAME=$CI_PROJECT_NAME
+      --cache-copy-layers=true
+      --snapshot-mode=redo
+      --cache-ttl=24h
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY}/$CI_PROJECT_NAMESPACE/$DOCKER_IMAGE_TAG"
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+    - if: '$CI_COMMIT_REF_NAME == "dev"'
+  tags:
+    - $DEV_DOCKER_TAG
+
+.job_sonarize: &sonar_job
+  stage: sonarize
+  image:
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner
+  allow_failure: true
+
+
+
+.job_scan: &job_security_scan
+  stage: security_scan
+  script:
+    - trivy image --exit-code 0 --severity HIGH,CRITICAL --no-progress $CI_REGISTRY/$CI_PROJECT_NAMESPACE/$DOCKER_IMAGE_TAG
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+    - if: '$CI_COMMIT_REF_NAME == "dev"'
+  tags:
+    - $PROD_SHELL_TAG
+
+sonarqube-check:
+  <<: *sonar_job
+  tags:
+    - $DEV_DOCKER_TAG
+  only:
+    - dev
+
+build_docker_image:
+  <<: *build_job
+
+vurnability_scan:
+  <<: *job_security_scan
+
+deploy_to_dev:
+  <<: *deploy_job
+  tags:
+    - total-dind
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "dev"'
+
+
+deploy_to_prod:
+  <<: *deploy_job
+  tags:
+    - $PROD_SHELL_TAG
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'

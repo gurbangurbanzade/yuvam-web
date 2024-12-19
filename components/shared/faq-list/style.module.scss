@@ -1,0 +1,73 @@
+@import "/styles/main.module.scss";
+
+.faqList {
+  margin: 0 auto;
+  max-width: 1088px;
+  &__accordion {
+    border-bottom: 1px solid #031f2f33;
+    padding: 15px 0px;
+    width: 100%;
+    display: grid;
+
+    &--background {
+      width: 100%;
+      transition: 300ms all ease-in-out;
+    }
+
+    &__head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &--title {
+        width: 100%;
+        @include typography(500, 20px, 30px);
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+        @include lg_tablet {
+          @include typography(500, 16px, 24px);
+        }
+      }
+      .open__accordion--title {
+        // color: $brandBlue-07;
+      }
+    }
+    &--content {
+      display: grid;
+      gap: 8px;
+      overflow: hidden;
+      padding: 0px;
+      margin-top: 8px;
+
+      font-style: normal;
+
+      @include typography();
+
+      color: #49545a;
+      @include mobile {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .open__accordion {
+      color: yellow;
+      display: grid;
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 300ms ease-in-out;
+    }
+
+    .close__accordion {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 300ms ease-in-out;
+    }
+  }
+  .gray {
+    background-color: black;
+  }
+}

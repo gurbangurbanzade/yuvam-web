@@ -1,0 +1,120 @@
+// main container
+.react-datepicker {
+  border: none;
+  width: 100%;
+  max-width: 528px;
+  border-radius: 0px;
+}
+// header
+.react-datepicker__header {
+  border-top-left-radius: 16px;
+  overflow: hidden;
+  padding: 0px;
+  border: none;
+  @include lg_tablet {
+    border-top-right-radius: 16px !important;
+  }
+}
+// current month name h2
+.react-datepicker__current-month {
+  height: 48px;
+  background-color: $brandBlue-07;
+  color: $light;
+  padding-left: 88px !important;
+  @include flexBox(row, flex-start, center);
+  @include typography(400, 16px, 24px, $light);
+}
+// current month name h2 bootom container
+.react-datepicker__header__dropdown {
+  @include lg_tablet {
+    height: 60px;
+    background-color: $brandBlue-07;
+  }
+}
+
+// next month button
+.react-datepicker__navigation--next {
+  position: absolute;
+  left: 40px;
+  top: 8px;
+  & ::before {
+    display: none;
+  }
+}
+// previous month button
+.react-datepicker__navigation--previous {
+  width: 50px;
+  transform: rotate(180deg);
+  position: absolute;
+  left: 20px;
+  top: 7px;
+  & ::before {
+    display: none;
+  }
+}
+// week days name container
+.react-datepicker__day-names {
+  background-color: $light;
+  height: 58px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+// week day name
+.react-datepicker__day-name {
+  @include typography(400, 12px, 18px, $brandGray-05);
+}
+
+// month day container
+.react-datepicker__month-container {
+  width: 100% !important;
+}
+.react-datepicker__month {
+  padding: 0px 20px;
+
+  margin: 0px;
+}
+// week row
+.react-datepicker__week {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+// month day
+.react-datepicker__day,
+.weekend {
+  height: 60px;
+  width: 100%;
+  @include flexBox();
+  @include typography(400, 14px, 20px, $brandGray-09);
+  background-color: $light;
+
+  &:hover {
+    background-color: $brandBlue-01;
+    border-radius: 12px;
+    color: $brandBlue-08;
+  }
+}
+
+// previous month day
+.past-date {
+  color: $brandGray-04;
+  &:hover {
+    cursor: not-allowed;
+    background-color: $light;
+    color: $brandGray-04;
+  }
+}
+
+.selected {
+  border: 1px solid $brandBlue-07;
+  background-color: $light;
+  border-radius: 12px;
+  color: $brandBlue-08;
+}

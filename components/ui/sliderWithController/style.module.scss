@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+
+  .content {
+    // padding-left: 300px;
+    @include lg_tablet {
+      // padding-left: 85px;
+    }
+
+    &--imgBox {
+      position: relative;
+      height: 720px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      @include lg_tablet {
+        height: 280px;
+        margin-bottom: 20px;
+      }
+    }
+    &--title {
+      @include typography(400, 24px, 32px, $brandBlue-07);
+      margin-bottom: 16px;
+    }
+    &--description {
+      color: $brandGray-06;
+      text-align: justify;
+    }
+  }
+}

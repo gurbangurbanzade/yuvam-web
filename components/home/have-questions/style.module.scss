@@ -1,0 +1,31 @@
+.haveQuestions {
+  padding-top: 132px;
+  padding-bottom: 15px;
+  @include flexBox(column, flex-start, stretch);
+  border-bottom: 1px solid #031f2f33;
+  gap: 30px;
+  &__header {
+    @include flexBox(column, flex-start, stretch);
+    gap: 30px;
+    &__icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: auto;
+    }
+    &__headText {
+      @include typography(700, 24px, 32px);
+    }
+    &__questions {
+      @include typography(400, 18px, 30px);
+      letter-spacing: -0.949999988079071px;
+      .email {
+        color: $primary-blue;
+      }
+    }
+    &__phone {
+      @include typography(400, 18px, 24px);
+      @include flexBox(row, space-between, center);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.loading {
+  height: 100vh;
+  padding: 0px 16px;
+  @include flexBox(column, center, center);
+  &__items {
+    max-width: 480px;
+    @include flexBox(column, center, center);
+    gap: 16px;
+    &__imgBox {
+      width: 100%;
+      display: flex;
+      @include flexBox(row, center, center);
+      gap: 10px;
+    }
+    &__title {
+      @include typography(500, 24px, 32px, $brandGray-09);
+      text-align: center;
+    }
+    &__description {
+      text-align: center;
+      color: $brandGray-07;
+    }
+  }
+}

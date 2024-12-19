@@ -1,0 +1,32 @@
+.hero {
+  @include flexBox(column, space-between, flex-start);
+  background: url("/images/static/hero-bg.png");
+  background-repeat: no-repeat;
+  //   background-size: contain;
+  background-position: bottom;
+  gap: 88px;
+  padding: 24px;
+  border-radius: 8px;
+  &__header {
+    @include flexBox(column, flex-start, flex-start);
+    gap: 12px;
+    &__headText {
+      @include typography(600, 40px, 52px);
+      letter-spacing: -0.949999988079071px;
+    }
+    &__subText {
+      @include typography(400, 20px, 32px);
+    }
+  }
+
+  &__service {
+    @include flexBox(column, flex-start, flex-start);
+    gap: 8px;
+    &--item {
+      padding: 8px 20px;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      @include typography(500, 18px, 32px);
+    }
+  }
+}

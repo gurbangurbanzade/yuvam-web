@@ -1,0 +1,48 @@
+.slider {
+  min-height: 100%;
+  min-width: 100%;
+  .slider__slide {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    .content {
+      min-height: 100%;
+      min-width: 100%;
+      &__imgBox {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 345px;
+        @include lg_tablet {
+          height: 240px;
+          min-width: 100%;
+        }
+        &--img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 16px;
+        }
+        &--title {
+          @include typography(500, 18px, 28px, $light);
+          position: absolute;
+          z-index: 1;
+          top: 20px;
+          left: 20px;
+          @include lg_tablet {
+            @include typography(400, 18px, 28px, $light);
+            bottom: 44px;
+          }
+        }
+      }
+      &--title {
+        @include typography(400, 24px, 32px, $brandBlue-07);
+        margin-bottom: 16px;
+      }
+      &--description {
+        color: $brandGray-06;
+        text-align: justify;
+      }
+    }
+  }
+}

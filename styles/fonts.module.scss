@@ -1,0 +1,111 @@
+/* Regular */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Medium */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Black Italic */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYBLACKITALIC.OTF")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Heavy Italic */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYHEAVYITALIC.OTF")
+    format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYLIGHTITALIC.OTF")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* SemiBold Italic */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYSEMIBOLDITALIC.OTF")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Thin Italic */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYTHINITALIC.OTF")
+    format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* UltraLight Italic */
+@font-face {
+  font-family: "SF Pro";
+  src: url("/src/assets/fonts/sf-pro-display/SFPRODISPLAYULTRALIGHTITALIC.OTF")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+////////////////////////////////////////////////
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
