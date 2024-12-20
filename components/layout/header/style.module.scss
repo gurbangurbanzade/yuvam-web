@@ -1,13 +1,14 @@
-@import "/styles/main.module.scss";
 .header {
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  background-color: $light;
-
-  @include mobile {
+  .navbar {
+    height: 56px;
+    @include flexBox(row, space-between, center);
+    &__nav {
+      &--loginBtn {
+        @include typography(700, 16px, 20px, $light);
+        background-color: $primary-blue;
+        border-radius: 4px;
+        padding: 4px 12px;
+      }
+    }
   }
-}
-
-.scrolled {
 }

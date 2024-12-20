@@ -1,31 +1,14 @@
-"use client";
-import Navbar from "./navbar";
+import Button from "@/components/ui/button";
 import styles from "./style.module.scss";
-import { useState, useEffect } from "react";
+
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
-    <header
-      className={`${styles["header"]}  ${scrolled ? styles.scrolled : ""}`}
-    >
+    <header className={`${styles["header"]} `}>
       <div className={`${styles["navbar"]} container`}>
-        <Navbar />
+        <div className={styles["navbar__logo"]}></div>
+        <div className={styles["navbar__nav"]}>
+          <button className={styles["navbar__nav--loginBtn"]}>Login</button>
+        </div>
       </div>
     </header>
   );
