@@ -5,6 +5,7 @@ import ConfirmationDetail from "@/components/pages/confirmation/confirmation-det
 import ProtectedCase from "@/components/pages/package/protected-case";
 import PageHeadText from "@/components/shared/page-head-text";
 import PayMonth from "@/components/shared/pay-month";
+import ProgressBar from "@/components/shared/progressBar";
 import React from "react";
 
 const ConfirmationContainer = () => {
@@ -17,12 +18,13 @@ const ConfirmationContainer = () => {
         alignItems: "stretch",
       }}
     >
-      <NavbarOperation />
+      <ProgressBar progress={6} />
+      <NavbarOperation backward="/property-number" />
       <PageHeadText>Let’s prepare your insurance contract!</PageHeadText>
       <ConfirmationDetail />
       <OperationFooter
         agreeText="Prooceed to payment"
-        nextStep="/"
+        nextStep="/payment"
       ></OperationFooter>
     </main>
   );

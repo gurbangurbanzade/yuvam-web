@@ -4,7 +4,7 @@ const PaymentForm = () => {
   return (
     <section>
       <div className={`container ${styles["form"]}`}>
-        <InputField label="Property registration number" />
+        <InputField label="Card number" />
         <div className={styles["form__footer"]}>
           <InputField label="Exp. date" />
           <InputField label="CVC" />

@@ -6,7 +6,7 @@ import React from "react";
 const SuccessContainer = () => {
   return (
     <main>
-      <ProgressBar progress={4} />
+      <ProgressBar progress={8} />
       <SuccessContent />
       <OperationFooter agreeText="Continue" nextStep="/"></OperationFooter>
     </main>

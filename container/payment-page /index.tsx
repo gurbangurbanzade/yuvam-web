@@ -1,9 +1,11 @@
 import FinCodeForm from "@/components/pages/fin-code/fin-code-form";
 import OperationFooter from "@/components/layout/footer/operation-footer";
 import NavbarOperation from "@/components/layout/header/navbar-operation";
-import PaymentForm from "@/components/pages/property-number/payment-form";
-import PropertyNumberForm from "@/components/pages/property-number/payment-form";
+import PaymentForm from "@/components/pages/payment/payment-form";
+import PropertyNumberForm from "@/components/pages/payment/payment-form";
 import PageHeadText from "@/components/shared/page-head-text";
+import PageSubText from "@/components/shared/page-sub-text";
+import ProgressBar from "@/components/shared/progressBar";
 
 const PaymentContainer = () => {
   return (
@@ -15,10 +17,19 @@ const PaymentContainer = () => {
         alignItems: "stretch",
       }}
     >
-      <NavbarOperation />
-      <PageHeadText>Final step to get your home safe!</PageHeadText>
+      <ProgressBar progress={7} />
+      <NavbarOperation backward="/confirmation" />
+      <PageHeadText>
+        Final step to get your home safe!
+        <PageSubText>
+          Enter details of the card you want to use for monthly payments
+        </PageSubText>
+      </PageHeadText>
       <PaymentForm />
-      <OperationFooter agreeText="Next" nextStep="/"></OperationFooter>
+      <OperationFooter
+        agreeText="Pay 8 ₼ & Subscribe"
+        nextStep="/success"
+      ></OperationFooter>
     </main>
   );
 };

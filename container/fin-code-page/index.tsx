@@ -3,6 +3,7 @@ import OperationFooter from "@/components/layout/footer/operation-footer";
 import NavbarOperation from "@/components/layout/header/navbar-operation";
 import PageHeadText from "@/components/shared/page-head-text";
 import ProgressBar from "@/components/shared/progressBar";
+import PageSubText from "@/components/shared/page-sub-text";
 
 const FinCodeContainer = () => {
   return (
@@ -16,7 +17,13 @@ const FinCodeContainer = () => {
     >
       <ProgressBar progress={4} />
       <NavbarOperation backward="/billing" />
-      <PageHeadText>Karim, please confirm your identity</PageHeadText>
+      <PageHeadText>
+        Karim, please confirm your identity
+        <PageSubText>
+          Don't worry, we'll only use this information to make your insurance
+          contract.
+        </PageSubText>
+      </PageHeadText>
       <FinCodeForm />
 
       <OperationFooter
