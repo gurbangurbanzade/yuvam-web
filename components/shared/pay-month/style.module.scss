@@ -1,0 +1,17 @@
+.content {
+  @include typography(500, 16px, 32px, "#1b1b1f");
+  margin-top: 64px;
+  text-align: center;
+  &__main {
+    @include typography(900, 32px, 41px);
+    letter-spacing: -0.58px;
+    .specialChar {
+      @include typography(600, 24px, 38px);
+      letter-spacing: -0.58px;
+    }
+    .specialCharSecond {
+      @include typography(600, 16px, 38px);
+      letter-spacing: -0.58px;
+    }
+  }
+}

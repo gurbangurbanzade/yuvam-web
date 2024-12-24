@@ -1,0 +1,66 @@
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__label {
+    margin-bottom: 8px;
+    @include typography(500, 12px, 16px);
+    letter-spacing: 0.4px;
+    position: absolute;
+    z-index: 1;
+    left: 16px;
+    top: 0px;
+    transform: translateY(-50%);
+    background-color: $light;
+    padding: 0px 4px;
+  }
+  &__input {
+    position: relative !important;
+    width: 100%;
+    svg {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+    }
+    &--item {
+      width: 100%;
+      border: 1px solid #66738b;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding-left: 12px;
+      border-radius: 8px;
+      @include typography(500, 16px, 24px);
+      &::placeholder {
+        color: #5a686f;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    &--itemWithIcon {
+      padding-left: 40px;
+    }
+    &--icon {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 20px;
+    }
+  }
+  &__icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .error {
+    color: #ff0505;
+    @include typography(500, 12px, 16px);
+  }
+}

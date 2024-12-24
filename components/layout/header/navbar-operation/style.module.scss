@@ -1,0 +1,20 @@
+.header {
+  margin-bottom: 8px;
+  .navbar {
+    padding: 0px 8px;
+    height: 48px;
+    @include flexBox(row, space-between, center);
+
+    &__rightSide {
+      @include flexBox(row, flex-start, center);
+      gap: 16px;
+      &--help {
+        border-radius: 8px;
+        @include flexBox();
+        background-color: #f1f0e3;
+        padding: 4px 12px;
+        @include typography(500, 16px, 20px, "#1b1b1f");
+      }
+    }
+  }
+}

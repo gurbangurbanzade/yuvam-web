@@ -1,0 +1,21 @@
+.list {
+  @include flexBox(column, flex-start, stretch);
+  padding: 0px 6px;
+  gap: 24px;
+  &__title {
+    @include typography(600, 24px, 20px);
+  }
+  &__content {
+    @include flexBox(column, flex-start, stretch);
+    gap: 16px;
+    &--item {
+      @include flexBox(row, space-between, center);
+      @include typography(400, 18px, 24px);
+      letter-spacing: -0.007em;
+    }
+  }
+  &__more {
+    @include typography(500, 18px, 20px, $primary-blue);
+    @include flexBox(row, flex-start, center);
+  }
+}

@@ -1,0 +1,22 @@
+.content {
+  margin-top: 80px;
+  @include flexBox(column, flex-start, stretch);
+  gap: 16px;
+  &__icon {
+    // text-align: center;
+    margin: auto;
+    font-size: 108px;
+    font-weight: 400;
+    line-height: 128px;
+    letter-spacing: -0.007em;
+  }
+  &__title {
+    @include typography(590, 36px, 40px, $primary-blue);
+    text-align: center;
+  }
+  &__description {
+    @include typography(400, 18px, 24px);
+    letter-spacing: -0.007em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,5 @@
+.pageHeadText {
+  margin-bottom: 32px;
+  padding: 0px 8px;
+  @include typography(700, 32px, 40px);
+}

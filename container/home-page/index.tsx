@@ -1,24 +1,28 @@
-import ChooseProtection from "@/components/home/choose-protection";
-import ConnectWith from "@/components/home/connect-with";
-import FaqHome from "@/components/home/faq-home";
-import HaveQuestions from "@/components/home/have-questions";
-import Hero from "@/components/home/hero";
-import ManagingEverything from "@/components/home/managing-everything";
-import SimpleSteps from "@/components/home/simple-steps";
-import Subscribe from "@/components/home/subscribe";
+import ChooseProtection from "@/components/pages/home/choose-protection";
+import ConnectWith from "@/components/pages/home/connect-with";
+import FaqHome from "@/components/pages/home/faq-home";
+import HaveQuestions from "@/components/pages/home/have-questions";
+import Hero from "@/components/pages/home/hero";
+import ManagingEverything from "@/components/pages/home/managing-everything";
+import SimpleSteps from "@/components/pages/home/simple-steps";
+import Subscribe from "@/components/pages/home/subscribe";
+import Footer from "@/components/layout/footer";
+import NavbarLanding from "@/components/layout/header/navbar-landing";
 import React from "react";
 
 const HomeContainer = () => {
   return (
     <main>
+      <NavbarLanding />
       <Hero />
       <Subscribe />
       <ChooseProtection />
-      <ManagingEverything />
+      {/* <ManagingEverything /> */}
       <SimpleSteps />
-      <ConnectWith />
+      {/* <ConnectWith /> */}
       <FaqHome />
       <HaveQuestions />
+      <Footer />
     </main>
   );
 };

@@ -1,0 +1,8 @@
+.form {
+  @include flexBox(column, flex-start, stretch);
+  gap: 24px;
+  &__footer {
+    @include flexBox(row, space-between, stretch);
+    gap: 18px;
+  }
+}
