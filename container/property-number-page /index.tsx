@@ -1,9 +1,10 @@
 import FinCodeForm from "@/components/pages/fin-code/fin-code-form";
 import OperationFooter from "@/components/layout/footer/operation-footer";
 import NavbarOperation from "@/components/layout/header/navbar-operation";
-import PropertyNumberForm from "@/components/pages/payment/payment-form";
+
 import PageHeadText from "@/components/shared/page-head-text";
 import ProgressBar from "@/components/shared/progressBar";
+import PropertyNumberForm from "@/components/pages/property-number/property-number-form";
 
 const PropertyNumberContainer = () => {
   return (

@@ -38,7 +38,9 @@ const HaveQuestions = () => {
             className={styles["haveQuestions__header__phone"]}
           >
             +994 51 234 34 34
-            <PhoneIcon />
+            <div className={styles["haveQuestions__header__phone--icon"]}>
+              <PhoneIcon />
+            </div>
           </Link>
         </div>
       </div>

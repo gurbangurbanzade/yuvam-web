@@ -8,7 +8,6 @@ const SuccessContainer = () => {
     <main>
       <ProgressBar progress={8} />
       <SuccessContent />
-      <OperationFooter agreeText="Continue" nextStep="/"></OperationFooter>
     </main>
   );
 };

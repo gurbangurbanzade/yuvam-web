@@ -1,7 +1,7 @@
 import InputField from "@/components/ui/input-field";
 import React from "react";
 
-const PaymentForm = () => {
+const PropertyNumberForm = () => {
   return (
     <section>
       <div className={`container`}>
@@ -11,4 +11,4 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+export default PropertyNumberForm;

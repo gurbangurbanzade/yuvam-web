@@ -4,6 +4,9 @@
   @include flexBox(column, flex-start, stretch);
   border-bottom: 1px solid #031f2f33;
   gap: 30px;
+  max-width: 591px;
+  position: relative;
+
   &__header {
     @include flexBox(column, flex-start, stretch);
     gap: 30px;
@@ -15,10 +18,19 @@
     }
     &__headText {
       @include typography(700, 24px, 32px);
+      @include tablet {
+        text-align: center;
+        @include typography(700, 36px, 56px);
+      }
     }
     &__questions {
       @include typography(400, 18px, 30px);
       letter-spacing: -0.949999988079071px;
+      @include tablet {
+        text-align: center;
+        @include typography(400, 22px, 32px);
+        letter-spacing: 0px;
+      }
       .email {
         color: $primary-blue;
       }
@@ -26,6 +38,16 @@
     &__phone {
       @include typography(400, 18px, 24px);
       @include flexBox(row, space-between, center);
+      @include tablet {
+        text-align: center;
+        @include typography(400, 22px, 32px);
+        letter-spacing: 0px;
+        @include flexBox(row, center, center);
+        &--icon {
+          position: absolute;
+          right: 0px;
+        }
+      }
     }
   }
 }

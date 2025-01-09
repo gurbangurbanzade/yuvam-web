@@ -28,9 +28,6 @@
         align-items: center;
         justify-content: space-between;
         border-radius: 8px;
-        @include lg_tablet {
-          @include typography(500, 16px, 24px);
-        }
       }
       .open__accordion--title {
         // color: $brandBlue-07;
@@ -48,10 +45,6 @@
       @include typography();
 
       color: #49545a;
-      @include mobile {
-        font-size: 14px;
-        line-height: 20px;
-      }
     }
 
     .open__accordion {
