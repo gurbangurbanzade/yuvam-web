@@ -6,15 +6,16 @@ import PenIcon from "@/components/icons/pen-icon";
 const SimpleSteps = () => {
   const stepsData = [
     {
-      title: "Identify your appartement",
-      description: "Enter your address or find your apartment on the map",
-    },
-    {
       title: "Confirm your identity",
       description: "Enter your personal information and FIN number",
     },
     {
-      title: "Sing insurance policy online",
+      title: "Identify your apartment",
+      description: "Enter your address or find your apartment on the map",
+    },
+
+    {
+      title: "Sign insurance policy online",
       description: "Select payment option and  details and sign the policy",
     },
   ];

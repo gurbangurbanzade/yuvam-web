@@ -28,8 +28,8 @@ const HaveQuestions = () => {
           </div>
           <div className={styles["haveQuestions__header__questions"]}>
             Email us at{" "}
-            <Link className={styles["email"]} href="support@yuva.az">
-              support@yuva.az
+            <Link className={styles["email"]} href="support@yuvam.az">
+              support@yuvam.az
             </Link>{" "}
             or contact by other ways:{" "}
           </div>

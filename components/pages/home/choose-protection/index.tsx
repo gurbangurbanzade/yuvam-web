@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "./slider.scss";
+import Link from "next/link";
 
 const ChooseProtection = () => {
   const plans = [
@@ -45,8 +46,8 @@ const ChooseProtection = () => {
       <div className={styles["chooseProtection__main"]}>
         <Swiper
           modules={[Pagination]}
-          loop={true}
-          slidesPerView={1.2}
+          // loop={true}
+          slidesPerView={1.3}
           spaceBetween={12}
           centeredSlides={true}
           initialSlide={1}
@@ -57,36 +58,38 @@ const ChooseProtection = () => {
         >
           {plans.map((item, index) => (
             <SwiperSlide key={index}>
-              <div
-                className={`${styles["slider__slide"]} ${
-                  item.selected ? styles["slider__slide--selected"] : ""
-                }`}
-              >
-                <div className={styles["content"]}>
-                  <div className={styles["content--selectedCustomer"]}>
-                    Selected by 42% of our customers
-                  </div>
-                  <div className={styles["content__title"]}>{item.title}</div>
-                  <div className={styles["content__price"]}>
-                    from{" "}
-                    <span className={styles["content__price--main"]}>
-                      {item.price}
-                    </span>
-                    <span className={styles["content__price--currency"]}>
-                      ₼
-                    </span>
-                    /month
-                  </div>
-                  <div className={styles["content__coverage"]}>
-                    coverage up to
-                  </div>
+              <Link href="/package">
+                <div
+                  className={`${styles["slider__slide"]} ${
+                    item.selected ? styles["slider__slide--selected"] : ""
+                  }`}
+                >
+                  <div className={styles["content"]}>
+                    <div className={styles["content--selectedCustomer"]}>
+                      Selected by 42% of our customers
+                    </div>
+                    <div className={styles["content__title"]}>{item.title}</div>
+                    <div className={styles["content__price"]}>
+                      from{" "}
+                      <span className={styles["content__price--main"]}>
+                        {item.price}
+                      </span>
+                      <span className={styles["content__price--currency"]}>
+                        ₼
+                      </span>
+                      /month
+                    </div>
+                    <div className={styles["content__coverage"]}>
+                      coverage up to
+                    </div>
 
-                  <div className={styles["content__coverageMain"]}>
-                    {item.coverage}
-                    <span>₼</span>
+                    <div className={styles["content__coverageMain"]}>
+                      {item.coverage}
+                      <span>₼</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
