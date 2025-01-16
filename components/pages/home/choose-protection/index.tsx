@@ -47,7 +47,7 @@ const ChooseProtection = () => {
         <Swiper
           modules={[Pagination]}
           // loop={true}
-          slidesPerView={1.3}
+          slidesPerView={1.2}
           spaceBetween={12}
           centeredSlides={true}
           initialSlide={1}
